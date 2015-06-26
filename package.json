@@ -12,6 +12,8 @@
   "author": "Tevin Joseph <tevinjosephko@gmail.com>, ",
   "license": "GPL",
   "dependencies": {
+    "node-static": "~0.7.1",
+    "socket.io": "~0.9.16",
     "express": "^4.12.0"
   }
 }

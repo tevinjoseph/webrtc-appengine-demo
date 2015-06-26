@@ -22,14 +22,18 @@ var app = express();
 app.use(require('./lib/appengine-handlers'));
 
 
-var static = require('node-static');
+var static_ = require('node-static');
 var http = require('http');
-var file = new(static.Server)();
+var file = new(static_.Server)();
 
+var express = require('express');
+var app = express();
+app.use('/', express.static(__dirname + '/public'));
+app.listen(8080, function() { console.log('listening')});
 // [START server]
 /* Start the server */
-var server = app.listen(process.env.PORT || '8080', '0.0.0.0', function() {
-  console.log('App listening at http://%s:%s', server.address().address, server.address().port);
-  console.log("Press Ctrl+C to quit.");
-});
+// var server = app.listen(process.env.PORT || '8080', '0.0.0.0', function() {
+//   console.log('App listening at http://%s:%s', server.address().address, server.address().port);
+//   console.log("Press Ctrl+C to quit.");
+// });
 // [END server]
